@@ -1,0 +1,13 @@
+{
+    "python.pythonPath": "/sbin/python3.7",
+    "python.unitTest.unittestArgs": [
+        "-v",
+        "-s",
+        "./__test__",
+        "-p",
+        "*test*.py"
+    ],
+    "python.unitTest.pyTestEnabled": false,
+    "python.unitTest.nosetestsEnabled": false,
+    "python.unitTest.unittestEnabled": true,
+}
