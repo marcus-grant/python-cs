@@ -14,10 +14,16 @@ class TestBubbleSortModule(unittest.TestCase):
         given = [
             [9, 8, 7, 6, 5, 4, 3, 2, 1, 0],
             [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-            [9, 1, 7, 6, 5, 4, 3, 2, 8, 0],
-            [random.randrange(1, 11, 1) for _ in range(100)],
-            [random.randrange(1, 101, 1) for _ in range(100)],
-            [random.randrange(1, 1001, 1) for _ in range(1000)],
+            [4, 1, 2, 1, 2, 4, 1, 2, 1, 4],
+            [random.randrange(0, 10) for _ in range(10)],
+            [random.randrange(0, 10) for _ in range(100)],
+            [random.randrange(0, 10) for _ in range(1000)],
+            [random.randrange(0, 1000) for _ in range(1000)],
+            # This takes too long on outer loop sorts
+            # [random.randrange(0, 1000) for _ in range(10000)],
+            # [random.randrange(0, 100) for _ in range(10**5)],
+            # [random.randrange(0, 10**5) for _ in range(10**5)],
+
         ]
         for g in given:
             expect = g.copy()
