@@ -10,3 +10,4 @@ from . import dynamic_fib_test
 
 # data structures
 from . import heap_test
+from . import tree_test
