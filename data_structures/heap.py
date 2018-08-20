@@ -70,25 +70,26 @@ def max_heapify(l, i, size):
         its direct children must violate the heap order, or the process will
         not begin or continue to the children further down the heap.
     """
-    # Get left/right children indices & heap_len
-    left = (i << 1) + 1
-    right = (i << 1) + 2
-    largest = i
+    # TODO Broken fix plz
+    # # Get left/right children indices & heap_len
+    # left = (i << 1) + 1
+    # right = (i << 1) + 2
+    # largest = i
 
-    # If within heap bounds &
-    # ...left child is larger than current, largest changes to that index
-    if left < size and l[left] > l[largest]:
-        largest = left
+    # # If within heap bounds &
+    # # ...left child is larger than current, largest changes to that index
+    # if left < size and l[left] > l[largest]:
+    #     largest = left
     
-    # If still within heap bounds &
-    # ...right child is larger than new/current largest, change largest to that
-    if right < size and l[right] > l[largest]:
-        largest = right
+    # # If still within heap bounds &
+    # # ...right child is larger than new/current largest, change largest to that
+    # if right < size and l[right] > l[largest]:
+    #     largest = right
     
-    # Untill no child is larger than current root @ i, swap then recurse.
-    if largest != i:
-        l[i], l[largest] = l[largest], l[i]
-        max_heapify(l, largest, size)
+    # # Untill no child is larger than current root @ i, swap then recurse.
+    # if largest != i:
+    #     l[i], l[largest] = l[largest], l[i]
+    #     max_heapify(l, largest, size)
 
 def build_max_heap(l):
     """ Take any list and in-place re-order it with max heap structure """
@@ -134,26 +135,26 @@ def pop_max(aheap):
 #     """ Takes list 'l' and converts to a properly min ordered heap list """
 #     return []
 
-class MaxHeap():
-    def __init__(self, l):
-        """ Initializes the heap, if a list is given, initializes using heapify
-        """
-        self.size = 0
-        self.data = []
-        if type(l) != 'list':
-            raise ValueError("Can only initialize heap with no arguments or a list")
-        else:
-            self.data = deepcopy(l)
-            build_max_heap(self.data)
+# class MaxHeap():
+#     def __init__(self, l):
+#         """ Initializes the heap, if a list is given, initializes using heapify
+#         """
+#         self.size = 0
+#         self.data = []
+#         if type(l) != 'list':
+#             raise ValueError("Can only initialize heap with no arguments or a list")
+#         else:
+#             self.data = deepcopy(l)
+#             build_max_heap(self.data)
         
-    def __repr__(self):
-        return '<MaxHeap: {}'.format(self.data)
+#     def __repr__(self):
+#         return '<MaxHeap: {}'.format(self.data)
     
-    # def build(self, l):
-    #     build_max_heap(l)
+#     # def build(self, l):
+#     #     build_max_heap(l)
     
-    # def push(self, x):
-    #     self.data = push_max(x, self.data)
+#     # def push(self, x):
+#     #     self.data = push_max(x, self.data)
     
-    # def pop()
+#     # def pop()
     

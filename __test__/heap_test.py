@@ -106,34 +106,34 @@ class TestHeapModuleFuncs(unittest.TestCase):
             msg = msg.format(g, e, a)
             self.assertEqual(e, a, msg=msg)
 
-    def test_pop_max(self):
-        """ Test pop_max for creating a properly ordered heap """
-        givens = [
-            [11, 5, 8, 3, 4],
-            [8, 5, 4, 3],
-            [5, 3, 4],
-            [4, 3],
-            [3],
-        ]
-        expect = [
-            [8, 5, 4, 3],
-            [5, 3, 4],
-            [4, 3],
-            [3],
-            []
-        ]
-        f = lambda x: heap.pop_max(x)
-        actual = deepcopy(givens)
-        for a in actual:
-            _ = f(a)
-        for g, e, a in zip(givens, expect, actual):
-            msg = "\n\ngiven:\n{}\nexpected:\n{}\nactual:\n{}\n"
-            msg = msg.format(g, e, a)
-            self.assertEqual(e, a, msg=msg)
+#     def test_pop_max(self):
+#         """ Test pop_max for creating a properly ordered heap """
+#         givens = [
+#             [11, 5, 8, 3, 4],
+#             [8, 5, 4, 3],
+#             [5, 3, 4],
+#             [4, 3],
+#             [3],
+#         ]
+#         expect = [
+#             [8, 5, 4, 3],
+#             [5, 3, 4],
+#             [4, 3],
+#             [3],
+#             []
+#         ]
+#         f = lambda x: heap.pop_max(x)
+#         actual = deepcopy(givens)
+#         for a in actual:
+#             _ = f(a)
+#         for g, e, a in zip(givens, expect, actual):
+#             msg = "\n\ngiven:\n{}\nexpected:\n{}\nactual:\n{}\n"
+#             msg = msg.format(g, e, a)
+#             self.assertEqual(e, a, msg=msg)
 
-class TestMaxHeap(unittest.TestCase):
-    """ Tests the various functionality of the MaxHeap class """
+# class TestMaxHeap(unittest.TestCase):
+#     """ Tests the various functionality of the MaxHeap class """
 
-    def test_init(self):
-        """ Test the init func """
-        pass
+#     def test_init(self):
+#         """ Test the init func """
+#         pass
