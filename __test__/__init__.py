@@ -16,3 +16,4 @@ from . import linked_list_test
 # from . import heap_test # TODO: broken, needs fixing
 from . import tree_test
 from . import hash_table_test
+from . import graph_test

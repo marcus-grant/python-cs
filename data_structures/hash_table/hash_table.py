@@ -20,7 +20,6 @@
 #       Then the getitem & setitem handles the raising of keyerror
 
 from copy import deepcopy
-
 class HashTable:
     """ A hash table object that performs hash table functions
         using only lists, hash functions, & linked lists.
@@ -28,19 +27,32 @@ class HashTable:
 
     # Grow & Shrink ratios to be used to determine when the table --
     # --needs to grow or shrink in size. Tweak as needed.
-    ratio_expand = 0.7
+    # I tend to lean on optimizing for computation time over --
+    # memory usage so I'll use a somewhat low load-factor
+    # More often than not, I've had to optimize systems due to --
+    # them taking too much CPU time over them taking too much RAM.
+    ratio_expand = 0.66
     ratio_shrink = 0.2
     min_size = 11
 
     def __init__(self, size=None):
         self._size = size if size is not None else self.min_size
-        self._keys = [None] * self.min_size
-        self._values = [None] * self.min_size
+        self._records = [(None, None)] * self._size
         self._count = 0
+        # Tracks when/where hash collisions occur
+        self._latest_conflicting_idx = None
     
     ################################
     ## Internal Mechanical Methods #
     ################################
+    # def _hashed_index_from_key(key, size=self._size):
+    #     """ The main function of this hash table. Gets used for almost every
+    #         operation of a hash table.
+    #         This takes a key, and a size to modulo against, and produces
+    #         an index from their hash result.
+    #         If a collision occurs, that initial index is stored in
+    #         self._latest_conflicting_index so linear probing functions properly
+            # """
     def _put(self, key, val):
         """ Sets the value @ key to val, or creates a new one with key
             if nothing is already there.
